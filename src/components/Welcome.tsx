@@ -10,6 +10,9 @@ const Welcome= () => {
           <Link to="/signup">
             <button className="Welcome_button">登録する</button>
           </Link>
+          <Link to="/login">
+            <button className="Welcome_button">ログインする</button>
+          </Link>
         </div>
       </div>
     </div>
