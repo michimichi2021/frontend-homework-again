@@ -2,13 +2,13 @@ import { useEffect,useContext } from "react";
 // import { AuthContext } from "../context/AuthContext";
 
 
-const Board = (props: any) => {
-  const { currentUser } = useContext(AuthContext);
+const Board = () => {
+  // const { currentUser } = useContext(AuthContext);
 
-  useEffect(() => {
-    // currentUserがnullの場合はログイン画面へリダイレクト
-    currentUser === null && props.history.push("/login");
-   }, [currentUser]);
+  // useEffect(() => {
+  //   // currentUserがnullの場合はログイン画面へリダイレクト
+  //   currentUser === null && props.history.push("/login");
+  //  }, [currentUser]);
 
 
   return(
