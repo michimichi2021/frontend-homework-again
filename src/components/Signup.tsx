@@ -5,7 +5,7 @@ import { Button, InputLabel, TextField } from "@mui/material";
 import { app } from "../firebase";
 
 
-const Signup = () => {
+export const Signup = () => {
   const auth = getAuth(app);
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
@@ -58,5 +58,3 @@ const Signup = () => {
   );
 
 };
-
-export default Signup;

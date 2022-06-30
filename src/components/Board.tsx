@@ -1,8 +1,9 @@
 import { useEffect,useContext } from "react";
+import { Header } from "./Header";
 // import { AuthContext } from "../context/AuthContext";
 
 
-const Board = () => {
+export const Board = () => {
   // const { currentUser } = useContext(AuthContext);
 
   // useEffect(() => {
@@ -12,8 +13,10 @@ const Board = () => {
 
 
   return(
-    <h1>掲示板</h1>
+    <>
+      <Header/>
+      <h1>掲示板</h1>
+    </>
   );
 };
 
-export default Board;

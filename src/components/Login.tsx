@@ -4,7 +4,8 @@ import { useNavigate,Link } from 'react-router-dom';
 import { Alert,Button, InputLabel, TextField,Snackbar } from "@mui/material";
 import { app } from "../firebase";
 
-const Login = ()=>{
+
+export const Login = ()=>{
   const auth = getAuth(app);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -61,4 +62,3 @@ const Login = ()=>{
 
 };
 
-export default Login;
