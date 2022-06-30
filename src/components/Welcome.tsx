@@ -1,7 +1,7 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-const Welcome= () => {
+export const Welcome= () => {
   return (
     <div className="Welcome_content">
       <div>
@@ -18,5 +18,3 @@ const Welcome= () => {
     </div>
   );
 };
-
-export default Welcome;
