@@ -1,16 +1,14 @@
-import React from 'react';
-import { initializeApp } from "firebase/app";
-import { firebaseConfig } from '../firebase';
+import { useState, useEffect, useContext } from 'react';
 import { getAuth,createUserWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate,Link } from 'react-router-dom';
 import { Button, InputLabel, TextField } from "@mui/material";
+import { app } from "../firebase";
 
 
-function Signup(){
-  const app = initializeApp(firebaseConfig);
+const Signup = () => {
   const auth = getAuth(app);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
   const navigate = useNavigate();
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -23,7 +21,6 @@ function Signup(){
   const handleChangePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(e.currentTarget.value)
   }
-
 
   return(
     <>

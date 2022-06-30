@@ -1,13 +1,10 @@
-import { useState,useContext } from 'react';
-import { initializeApp } from "firebase/app";
-import { firebaseConfig } from '../firebase';
+import { useEffect,useState } from 'react';
 import { getAuth,createUserWithEmailAndPassword } from 'firebase/auth';
-import { useNavigate,Link,Navigate } from 'react-router-dom';
-import { Button, InputLabel, TextField } from "@mui/material";
-import { AuthContext } from "../context/AuthContext";
+import { useNavigate,Link } from 'react-router-dom';
+import { Alert,Button, InputLabel, TextField,Snackbar } from "@mui/material";
+import { app } from "../firebase";
 
-function Login(){
-  const app = initializeApp(firebaseConfig);
+const Login = ()=>{
   const auth = getAuth(app);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -24,13 +21,12 @@ function Login(){
   const handleChangePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(e.currentTarget.value)
   }
-  const { isAuth } = useContext(AuthContext);
 
-  if(!isAuth){
-    return < Navigate to="/login" />;
-  } else {
-    return(
-      <div>
+
+
+  return(
+    <>
+    <div>
         <h1>ログイン</h1>
         <form onSubmit={handleSubmit}>
           <div>
@@ -59,8 +55,9 @@ function Login(){
           </div>
         </form>
       </div>
-    );
-  }
+
+    </>
+  );
 
 };
 

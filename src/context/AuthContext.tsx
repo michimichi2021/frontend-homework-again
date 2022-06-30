@@ -1,34 +1,32 @@
-import { ReactNode,useState, createContext } from 'react';
-import type { User } from "firebase/auth";
+// import { User } from 'firebase';
+// import { useState, createContext,useEffect,ReactNode, } from 'react';
+// import auth from '../components/Login';
 
-export type AuthProps={
-  children:ReactNode
-}
+// interface IAuthContext{
+//   currentUser: User|null|undefined;
+// }
 
-export type UserType = User | null;
+// const AuthContext = createContext<IAuthContext>({currentUser:undefined});
 
-export type AuthContextProps={
-  user:UserType
-}
+// const AuthContextProvider = (props:any) => {
+//   const [currentUser, setCurrentUser] = useState<User|null|undefined>(
+//     undefined
+//   );
 
+//   useEffect(()=>{
+//     auth.onAuthStateChanged(user=>{
+//       setCurrentUser(user);
+//     });
+//   },[]);
 
-export const AuthContext = createContext<Partial<AuthContextProps>();
+//   return(
+//     <AuthContext.Provider value={{ currentUser:currentUser}}>
+//       {props.children}
+//     </AuthContext.Provider>
+//   )
+// };
 
-const AuthContextProvider = ({ children}:AuthProps) => {
-  const [isAuth, setIsAuth] = useState(false);
-
-  const login = () => {
-    setIsAuth(true);
-  }
-
-  return(
-    <AuthContextProvider value={{login, isAuth}}>
-      {children}
-    </AuthContextProvider>
-  )
-}
-
-export default AuthContextProvider;
+// export { AuthContext,AuthContextProvider };
 
 
 
